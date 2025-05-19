@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Restituo - Centro de Rehabilitación</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+    <%- include('partials/header') %>
+
+    <main>
+        <section class="casas">
+    <div class="casa" id="hotal">
+        <img src="/images/hotal.jpg" alt="El Hostal">
+        <h2>El Hostal</h2>
+        <p>Casa con más lujos y atención personalizada. Ideal para quienes buscan privacidad y confort.</p>
+        <button class="abrir-modal" data-modal="modal-hotal" title="Ver más">
+            <i class="fa-solid fa-circle-chevron-down"></i>
+        </button>
+    </div>
+    
+    <div class="casa" id="estancia">
+        <img src="/images/estancia.jpg" alt="La Estancia">
+        <h2>La Estancia</h2>
+        <p>Opción accesible y cómoda para quienes necesitan ayuda con un enfoque comunitario.</p>
+        <button class="abrir-modal" data-modal="modal-estancia" title="Ver más">
+            <i class="fa-solid fa-circle-chevron-down"></i>
+        </button>
+    </div>
+    <div class="casa" id="chalet">
+        <img src="/images/chalet.jpg" alt="El Chalet">
+        <h2>El Chalet</h2>
+        <p>Exclusivo para mujeres y sus hijos. Ambiente familiar y seguro.</p>
+        <button class="abrir-modal" data-modal="modal-chalet" title="Ver más">
+            <i class="fa-solid fa-circle-chevron-down"></i>
+        </button>
+    </div>
+</section>
+
+    <!-- Panel flotante: Hotal -->
+    <div class="modal" id="modal-hotal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>El Hostal</h3>
+            <div class="modal-carousel">
+                <img src="/images/hotal1.jpg" class="active" alt="Hostal 1">
+                <img src="/images/hotal2.jpg" alt="Hostal 2">
+                <img src="/images/hotal3.jpg" alt="Hostal 3">
+                <button class="carousel-btn prev">&#10094;</button>
+                <button class="carousel-btn next">&#10095;</button>
+            </div>
+            <p>El Hostal ofrece un entorno exclusivo con habitaciones privadas, atención médica constante, y servicios de terapia individualizada. Ideal para quienes buscan privacidad, tranquilidad y una rehabilitación premium.</p>
+            <p><strong>Ubicación:</strong> Eva Perón 2825, Concordia, Argentina</p>
+            <iframe src="https://www.google.com/maps?q=Eva+Peron+2825,+Concordia,+Argentina&output=embed" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <a class="whatsapp-modal-btn" href="https://wa.me/5491124668395" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp Hostal
+        </a>
+        </div>
+    </div>
+
+    <!-- Panel flotante: Estancia -->
+    <div class="modal" id="modal-estancia">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>La Estancia</h3>
+            <div class="modal-carousel">
+                <img src="/images/estancia1.jpg" class="active" alt="Estancia 1">
+                <img src="/images/estancia2.jpg" alt="Estancia 2">
+                <img src="/images/estancia3.jpg" alt="Estancia 3">
+                <button class="carousel-btn prev">&#10094;</button>
+                <button class="carousel-btn next">&#10095;</button>
+            </div>
+            <p>La Estancia es una casa cómoda, con espacios compartidos y actividades grupales que refuerzan la convivencia, ideales para quienes prefieren el acompañamiento colectivo en su proceso de recuperación.</p>
+            <p><strong>Ubicación:</strong> Villa Zorraquín, Concordia, Argentina</p>
+            <iframe src="https://www.google.com/maps?q=Villa+Zorraquin,+Concordia,+Argentina&output=embed" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <a class="whatsapp-modal-btn" href="https://wa.me/5491124668396" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp Estancia
+        </a>
+        </div>
+    </div>
+
+    <!-- Panel flotante: Chalet -->
+    <div class="modal" id="modal-chalet">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>El Chalet</h3>
+            <div class="modal-carousel">
+                <img src="/images/chalet1.jpg" class="active" alt="Chalet 1">
+                <img src="/images/chalet2.jpg" alt="Chalet 2">
+                <img src="/images/chalet3.jpg" alt="Chalet 3">
+                <button class="carousel-btn prev">&#10094;</button>
+                <button class="carousel-btn next">&#10095;</button>
+            </div>
+            <p>El Chalet es una residencia exclusiva para mujeres, con atención especializada y espacios seguros para sus hijos. Combina el tratamiento con un entorno familiar y contención emocional.</p>
+            <p><strong>Ubicación:</strong> Pres. Illia y Lescano, Concordia, Argentina</p>
+            <iframe src="https://www.google.com/maps?q=Pres.+Illia+y+Lescano,+Concordia,+Argentina&output=embed" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <a class="whatsapp-modal-btn" href="https://wa.me/5491124668397" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp Chalet
+        </a>
+        </div>
+    </div>
+
+    <div class="img-fullscreen-overlay" id="imgOverlay">
+        <span class="close-full" id="closeImgOverlay">&times;</span>
+        <img src="" alt="Imagen ampliada" id="imgOverlayImg">
+    </div>
+
+        <section id="galeria">
+    <h2>Galería de Imágenes</h2>
+    <div class="carousel">
+        <button class="carousel-btn prev" onclick="prevImage()">&#10094;</button>
+        <div class="carousel-inner">
+            <img src="/images/carrusel1.png" class="active" alt="Imagen 1">
+            <img src="/images/carrusel2.png" alt="Imagen 2">
+            <img src="/images/carrusel3.png" alt="Imagen 3">
+        </div>
+        <button class="carousel-btn next" onclick="nextImage()">&#10095;</button>
+        <script>
+    console.log("Restituo cargado correctamente.");
+
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.carousel-inner img');
+
+    function showImage(index) {
+        images.forEach((img, i) => {
+            img.classList.remove('active');
+            if (i === index) img.classList.add('active');
+        });
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        showImage(currentIndex);
+    });
+</script>
+
+    </div>
+    </section>
+
+
+        <section id="contacto">
+            <h2>Contáctanos</h2>
+            <form action="/contacto" method="POST" class="contact-form">
+                <input type="text" name="nombre" placeholder="Tu nombre" required>
+                <input type="email" name="email" placeholder="Tu correo electrónico" required>
+                <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+          <div class="whatsapp-button">
+            <a href="https://wa.me/5491124668395" target="_blank">
+             <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+            </a>
+          </div>
+
+        </section>
+    </main>
+
+    <%- include('partials/footer') %>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // Carrusel de galería principal
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.carousel-inner img');
+    function showImage(index) {
+        images.forEach((img, i) => {
+            img.classList.remove('active');
+            if (i === index) img.classList.add('active');
+        });
+    }
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+    }
+    showImage(currentIndex);
+
+    // Botones del carrusel principal
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    if (prevBtn && nextBtn) {
+        prevBtn.onclick = e => { e.stopPropagation(); prevImage(); };
+        nextBtn.onclick = e => { e.stopPropagation(); nextImage(); };
+    }
+
+    // Abrir modal al hacer click en el botón de cada casa
+    document.querySelectorAll('.abrir-modal').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const modalId = this.getAttribute('data-modal');
+            openModal(modalId);
+        });
+    });
+
+    // Cerrar modal al hacer click en la X
+    document.querySelectorAll('.modal .close').forEach(btn => {
+        btn.onclick = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            btn.closest('.modal').style.display = 'none';
+        };
+    });
+
+    // Cerrar modal al hacer click fuera del contenido
+    document.querySelectorAll('.modal').forEach(modal => {
+        modal.onclick = function(e) {
+            if (e.target === modal) modal.style.display = 'none';
+        };
+    });
+
+    // Carrusel en cada modal
+    document.querySelectorAll('.modal').forEach(modal => {
+        const images = modal.querySelectorAll('.modal-carousel img');
+        let idx = 0;
+        const show = i => {
+            images.forEach((img, j) => img.classList.toggle('active', j === i));
+        };
+        const prevBtn = modal.querySelector('.carousel-btn.prev');
+        const nextBtn = modal.querySelector('.carousel-btn.next');
+        if (prevBtn && nextBtn) {
+            prevBtn.onclick = e => {
+                e.stopPropagation();
+                idx = (idx - 1 + images.length) % images.length;
+                show(idx);
+            };
+            nextBtn.onclick = e => {
+                e.stopPropagation();
+                idx = (idx + 1) % images.length;
+                show(idx);
+            };
+        }
+        show(idx);
+    });
+
+    // Permitir ver imagen completa al hacer clic en cualquier imagen de carrusel
+    document.querySelectorAll('.carousel-inner img, .modal-carousel img').forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const overlay = document.getElementById('imgOverlay');
+            const overlayImg = document.getElementById('imgOverlayImg');
+            overlayImg.src = this.src;
+            overlay.classList.add('active');
+        });
+    });
+    document.getElementById('closeImgOverlay').onclick = function() {
+        document.getElementById('imgOverlay').classList.remove('active');
+    };
+    document.getElementById('imgOverlay').onclick = function(e) {
+        if (e.target === this) this.classList.remove('active');
+    };
+});
+
+// Función global para abrir modal
+function openModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) modal.style.display = 'block';
+}
+</script>
+</body>
+</html>
