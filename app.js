@@ -49,7 +49,7 @@ app.post('/contacto', async (req, res) => {
 });
 
 // Servidor
-const PORT = parseInt(process.env.PORT, 10) || 10000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Servidor escuchando en el puerto ${PORT}`);
+    console.log(`Servidor funcionando en http://localhost:${PORT}`);
 });
