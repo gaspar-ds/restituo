@@ -1,158 +1,196 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" itemscope itemtype="https://schema.org/MedicalClinic">
 <head>
     <meta charset="UTF-8">
-    <title>Restituo - Centro de Rehabilitación</title>
+    <title>Restituo - Centro de Rehabilitación en Concordia, Argentina</title>
+    <meta name="description" content="Centro de rehabilitación Restituo en Concordia, Entre Ríos. Atención personalizada, casas especializadas, contacto directo y ubicación en Google Maps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Restituo Asociación Civil">
+    <meta name="geo.region" content="AR-E" />
+    <meta name="geo.placename" content="Concordia, Entre Ríos, Argentina" />
+    <meta name="geo.position" content="-31.3929;-58.0174" />
+    <meta name="ICBM" content="-31.3929, -58.0174" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Restituo - Centro de Rehabilitación en Concordia, Argentina">
+    <meta property="og:description" content="Casas especializadas, atención personalizada y contacto directo. Ubicación en Google Maps.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://restituo.org/">
+    <meta property="og:image" content="https://restituo.org/images/logo.png">
+    <meta property="og:locale" content="es_AR">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Restituo - Centro de Rehabilitación en Concordia, Argentina">
+    <meta name="twitter:description" content="Casas especializadas, atención personalizada y contacto directo. Ubicación en Google Maps.">
+    <meta name="twitter:image" content="https://restituo.org/images/logo.png">
+    <!-- Favicon -->
+    <link rel="icon" href="/images/logo.png" type="image/png">
+    <link rel="canonical" href="https://restituo.org/">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "Restituo Asociación Civil",
+      "image": "https://restituo.org/images/logo.png",
+      "url": "https://restituo.org/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Eva Perón 2825",
+        "addressLocality": "Concordia",
+        "addressRegion": "Entre Ríos",
+        "addressCountry": "AR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-31.3929",
+        "longitude": "-58.0174"
+      },
+      "telephone": "+5493454249999",
+      "sameAs": [
+        "https://www.instagram.com/restituo_asociacioncivil/",
+        "https://wa.me/5493454249999"
+      ]
+    }
+    </script>
 </head>
 <body>
-
     <%- include('partials/header') %>
+    <main id="main-content">
+        <nav aria-label="Enlaces internos" class="visually-hidden">
+            <a href="#galeria">Galería</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+        <section class="casas" aria-label="Tipos de casas de rehabilitación">
+            <article class="casa" id="hotal" itemscope itemtype="https://schema.org/Residence">
+                <img src="/images/hostal.png" alt="El Hostal - Casa de lujo y atención personalizada" loading="lazy" width="300" height="200" itemprop="image">
+                <h2 itemprop="name">El Hostal</h2>
+                <p itemprop="description">Casa con más lujos y atención personalizada. Ideal para quienes buscan privacidad y confort.</p>
+                <button class="abrir-modal" data-modal="modal-hotal" title="Ver más sobre El Hostal" aria-label="Ver más sobre El Hostal">
+                    <i class="fa-solid fa-circle-chevron-down" aria-hidden="true"></i>
+                </button>
+            </article>
+            <article class="casa" id="estancia" itemscope itemtype="https://schema.org/Residence">
+                <img src="/images/estancia.jpg" alt="La Estancia - Opción accesible y cómoda" loading="lazy" width="300" height="200" itemprop="image">
+                <h2 itemprop="name">La Estancia</h2>
+                <p itemprop="description">Opción accesible y cómoda para quienes necesitan ayuda con un enfoque comunitario.</p>
+                <button class="abrir-modal" data-modal="modal-estancia" title="Ver más sobre La Estancia" aria-label="Ver más sobre La Estancia">
+                    <i class="fa-solid fa-circle-chevron-down" aria-hidden="true"></i>
+                </button>
+            </article>
+            <article class="casa" id="chalet" itemscope itemtype="https://schema.org/Residence">
+                <img src="/images/chalet.jpg" alt="El Chalet - Exclusivo para mujeres y sus hijos" loading="lazy" width="300" height="200" itemprop="image">
+                <h2 itemprop="name">El Chalet</h2>
+                <p itemprop="description">Exclusivo para mujeres y sus hijos. Ambiente familiar y seguro.</p>
+                <button class="abrir-modal" data-modal="modal-chalet" title="Ver más sobre El Chalet" aria-label="Ver más sobre El Chalet">
+                    <i class="fa-solid fa-circle-chevron-down" aria-hidden="true"></i>
+                </button>
+            </article>
+        </section>
 
-    <main>
-        <section class="casas">
-    <div class="casa" id="hotal">
-        <img src="/images/hostal.png" alt="El Hostal">
-        <h2>El Hostal</h2>
-        <p>Casa con más lujos y atención personalizada. Ideal para quienes buscan privacidad y confort.</p>
-        <button class="abrir-modal" data-modal="modal-hotal" title="Ver más">
-            <i class="fa-solid fa-circle-chevron-down"></i>
-        </button>
-    </div>
-    
-    <div class="casa" id="estancia">
-        <img src="/images/estancia.jpg" alt="La Estancia">
-        <h2>La Estancia</h2>
-        <p>Opción accesible y cómoda para quienes necesitan ayuda con un enfoque comunitario.</p>
-        <button class="abrir-modal" data-modal="modal-estancia" title="Ver más">
-            <i class="fa-solid fa-circle-chevron-down"></i>
-        </button>
-    </div>
-    <div class="casa" id="chalet">
-        <img src="/images/chalet.jpg" alt="El Chalet">
-        <h2>El Chalet</h2>
-        <p>Exclusivo para mujeres y sus hijos. Ambiente familiar y seguro.</p>
-        <button class="abrir-modal" data-modal="modal-chalet" title="Ver más">
-            <i class="fa-solid fa-circle-chevron-down"></i>
-        </button>
-    </div>
-</section>
-
-    <!-- Panel flotante: Hotal -->
-    <div class="modal" id="modal-hotal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>El Hostal</h3>
-            <p>El Hostal ofrece un entorno exclusivo con habitaciones privadas, atención médica constante, y servicios de terapia individualizada. Ideal para quienes buscan privacidad, tranquilidad y una rehabilitación premium.</p>
-            <p><strong>Ubicación:</strong> Eva Perón 2825, Concordia, Argentina</p>
-            <iframe src="https://www.google.com/maps?q=Eva+Peron+2825,+Concordia,+Argentina&output=embed" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            <a class="whatsapp-modal-btn" href="https://wa.me/5493454249999" target="_blank">
-            <i class="fab fa-whatsapp"></i> WhatsApp Hostal
-        </a>
+        <!-- Modales de casas -->
+        <div class="modal" id="modal-hotal" role="dialog" aria-modal="true" aria-labelledby="modal-hotal-title">
+            <div class="modal-content">
+                <span class="close" tabindex="0" aria-label="Cerrar">&times;</span>
+                <h3 id="modal-hotal-title">El Hostal</h3>
+                <div class="modal-carousel" aria-label="Imágenes de El Hostal">
+                    <img src="/images/hostal.png" class="active" alt="Vista principal de El Hostal" loading="lazy">
+                    <img src="/images/carrusel1.png" alt="Habitación de El Hostal" loading="lazy">
+                    <img src="/images/carrusel2.jpg" alt="Comedor de El Hostal" loading="lazy">
+                    <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+                    <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
+                </div>
+                <p>El Hostal ofrece un entorno exclusivo con habitaciones privadas, atención médica constante y servicios de terapia individualizada. Ideal para quienes buscan privacidad, tranquilidad y una rehabilitación premium.</p>
+                <p><strong>Ubicación:</strong> Eva Perón 2825, Concordia, Argentina</p>
+                <iframe src="https://www.google.com/maps?q=Eva+Peron+2825,+Concordia,+Argentina&output=embed" title="Mapa El Hostal" width="100%" height="120" style="border:0;" allowfullscreen loading="lazy"></iframe>
+                <a class="whatsapp-modal-btn" href="https://wa.me/5493454249999" target="_blank" rel="noopener" aria-label="WhatsApp Hostal">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Hostal
+                </a>
+            </div>
         </div>
-    </div>
-
-    <!-- Panel flotante: Estancia -->
-    <div class="modal" id="modal-estancia">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>La Estancia</h3>
-            <p>La Estancia es una casa cómoda, con espacios compartidos y actividades grupales que refuerzan la convivencia, ideales para quienes prefieren el acompañamiento colectivo en su proceso de recuperación.</p>
-            <p><strong>Ubicación:</strong> Villa Zorraquín, Concordia, Argentina</p>
-            <iframe src="https://www.google.com/maps?q=Villa+Zorraquin,+Concordia,+Argentina&output=embed" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            <a class="whatsapp-modal-btn" href="https://wa.me/5491124668396" target="_blank">
-            <i class="fab fa-whatsapp"></i> WhatsApp Estancia
-        </a>
+        <div class="modal" id="modal-estancia" role="dialog" aria-modal="true" aria-labelledby="modal-estancia-title">
+            <div class="modal-content">
+                <span class="close" tabindex="0" aria-label="Cerrar">&times;</span>
+                <h3 id="modal-estancia-title">La Estancia</h3>
+                <div class="modal-carousel" aria-label="Imágenes de La Estancia">
+                    <img src="/images/estancia.jpg" class="active" alt="Vista principal de La Estancia" loading="lazy">
+                    <img src="/images/carrusel3.jpg" alt="Habitación de La Estancia" loading="lazy">
+                    <img src="/images/carrusel2.jpg" alt="Comedor de La Estancia" loading="lazy">
+                    <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+                    <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
+                </div>
+                <p>La Estancia es una casa cómoda, con espacios compartidos y actividades grupales que refuerzan la convivencia, ideales para quienes prefieren el acompañamiento colectivo en su proceso de recuperación.</p>
+                <p><strong>Ubicación:</strong> Villa Zorraquín, Concordia, Argentina</p>
+                <iframe src="https://www.google.com/maps?q=Villa+Zorraquin,+Concordia,+Argentina&output=embed" title="Mapa La Estancia" width="100%" height="120" style="border:0;" allowfullscreen loading="lazy"></iframe>
+                <a class="whatsapp-modal-btn" href="https://wa.me/5491124668396" target="_blank" rel="noopener" aria-label="WhatsApp Estancia">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Estancia
+                </a>
+            </div>
         </div>
-    </div>
-
-    <!-- Panel flotante: Chalet -->
-    <div class="modal" id="modal-chalet">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>El Chalet</h3>
-            <p>El Chalet es una residencia exclusiva para mujeres, con atención especializada y espacios seguros para sus hijos. Combina el tratamiento con un entorno familiar y contención emocional.</p>
-            <p><strong>Ubicación:</strong> Pres. Illia y Lescano, Concordia, Argentina</p>
-            <iframe src="https://www.google.com/maps?q=Pres.+Illia+y+Lescano,+Concordia,+Argentina&output=embed" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            <a class="whatsapp-modal-btn" href="https://wa.me/5493456026867" target="_blank">
-            <i class="fab fa-whatsapp"></i> WhatsApp Chalet
-        </a>
+        <div class="modal" id="modal-chalet" role="dialog" aria-modal="true" aria-labelledby="modal-chalet-title">
+            <div class="modal-content">
+                <span class="close" tabindex="0" aria-label="Cerrar">&times;</span>
+                <h3 id="modal-chalet-title">El Chalet</h3>
+                <div class="modal-carousel" aria-label="Imágenes de El Chalet">
+                    <img src="/images/chalet.jpg" class="active" alt="Vista principal de El Chalet" loading="lazy">
+                    <img src="/images/carrusel1.png" alt="Habitación de El Chalet" loading="lazy">
+                    <img src="/images/carrusel3.jpg" alt="Comedor de El Chalet" loading="lazy">
+                    <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+                    <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
+                </div>
+                <p>El Chalet es una residencia exclusiva para mujeres, con atención especializada y espacios seguros para sus hijos. Combina el tratamiento con un entorno familiar y contención emocional.</p>
+                <p><strong>Ubicación:</strong> Pres. Illia y Lescano, Concordia, Argentina</p>
+                <iframe src="https://www.google.com/maps?q=Pres.+Illia+y+Lescano,+Concordia,+Argentina&output=embed" title="Mapa El Chalet" width="100%" height="120" style="border:0;" allowfullscreen loading="lazy"></iframe>
+                <a class="whatsapp-modal-btn" href="https://wa.me/5493456026867" target="_blank" rel="noopener" aria-label="WhatsApp Chalet">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Chalet
+                </a>
+            </div>
         </div>
-    </div>
 
-    <div class="img-fullscreen-overlay" id="imgOverlay">
-        <span class="close-full" id="closeImgOverlay">&times;</span>
-        <img src="" alt="Imagen ampliada" id="imgOverlayImg">
-    </div>
-
-        <section id="galeria">
-    <h2>Galería de Imágenes</h2>
-    <div class="carousel">
-        <button class="carousel-btn prev" onclick="prevImage()">&#10094;</button>
-        <div class="carousel-inner">
-            <img src="/images/carrusel1.png" class="active" alt="Imagen 1">
-            <img src="/images/carrusel2.jpg" alt="Imagen 2">
-            <img src="/images/carrusel3.jpg" alt="Imagen 3">
+        <div class="img-fullscreen-overlay" id="imgOverlay" aria-modal="true" role="dialog">
+            <span class="close-full" id="closeImgOverlay" tabindex="0" aria-label="Cerrar imagen ampliada">&times;</span>
+            <img src="" alt="Imagen ampliada" id="imgOverlayImg" loading="lazy">
         </div>
-        <button class="carousel-btn next" onclick="nextImage()">&#10095;</button>
-        <script>
-    console.log("Restituo cargado correctamente.");
 
-    let currentIndex = 0;
-    const images = document.querySelectorAll('.carousel-inner img');
+        <section id="galeria" aria-label="Galería de Imágenes">
+            <h2>Galería de Imágenes</h2>
+            <div class="carousel" aria-label="Carrusel principal">
+                <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+                <div class="carousel-inner">
+                    <img src="/images/carrusel1.png" class="active" alt="Habitación principal del centro Restituo" loading="lazy" width="800" height="400">
+                    <img src="/images/carrusel2.jpg" alt="Comedor del centro Restituo" loading="lazy" width="800" height="400">
+                    <img src="/images/carrusel3.jpg" alt="Jardín del centro Restituo" loading="lazy" width="800" height="400">
+                </div>
+                <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
+            </div>
+        </section>
 
-    function showImage(index) {
-        images.forEach((img, i) => {
-            img.classList.remove('active');
-            if (i === index) img.classList.add('active');
-        });
-    }
-
-    function nextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage(currentIndex);
-    }
-
-    function prevImage() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        showImage(currentIndex);
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-        showImage(currentIndex);
-    });
-</script>
-
-    </div>
-    </section>
-
-    
-
-        <section id="contacto">
+        <section id="contacto" aria-label="Formulario de contacto">
             <h2>Contáctanos</h2>
-            <form action="/contacto" method="POST" class="contact-form">
-                <input type="text" name="nombre" placeholder="Tu nombre" required>
-                <input type="email" name="email" placeholder="Tu correo electrónico" required>
-                <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+            <form action="/contacto" method="POST" class="contact-form" autocomplete="on">
+                <label for="nombre" class="visually-hidden">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name">
+                <label for="email" class="visually-hidden">Correo electrónico</label>
+                <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required autocomplete="email">
+                <label for="mensaje" class="visually-hidden">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Tu mensaje" required autocomplete="off"></textarea>
                 <button type="submit">Enviar</button>
             </form>
-          <div class="whatsapp-button">
-            <a href="https://wa.me/5491124668395" target="_blank">
-             <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
-            </a>
-          </div>
+            <div class="whatsapp-button">
+                <a href="https://wa.me/5491124668395" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i> Contactar por WhatsApp
+                </a>
+            </div>
             <div style="text-align:center; margin: 40px 0 10px 0;">
-                 <a href="https://www.instagram.com/restituo_asociacioncivil/" target="_blank" class="instagram-btn" style="display:inline-block; background:#E1306C; color:#fff; padding:12px 28px; border-radius:30px; font-size:1.2rem; text-decoration:none; font-weight:bold;">
-                     <i class="fab fa-instagram"></i> Síguenos en Instagram
-                 </a>
-    </div>
+                <a href="https://www.instagram.com/restituo_asociacioncivil/" target="_blank" rel="noopener" class="instagram-btn" aria-label="Síguenos en Instagram">
+                    <i class="fab fa-instagram" aria-hidden="true"></i> Síguenos en Instagram
+                </a>
+            </div>
         </section>
     </main>
-
     <%- include('partials/footer') %>
-
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     // Carrusel de galería principal
@@ -249,44 +287,44 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('imgOverlay').onclick = function(e) {
         if (e.target === this) this.classList.remove('active');
     };
-});
 
-// Swipe para carrusel principal
-const carouselInner = document.querySelector('.carousel-inner');
-if (carouselInner) {
-    let startX = 0;
-    let endX = 0;
-    carouselInner.addEventListener('touchstart', e => {
-        startX = e.touches[0].clientX;
-    });
-    carouselInner.addEventListener('touchend', e => {
-        endX = e.changedTouches[0].clientX;
-        if (startX - endX > 40) nextImage();
-        if (endX - startX > 40) prevImage();
-    });
-}
-
-// Swipe para carrusel en cada modal
-document.querySelectorAll('.modal-carousel').forEach(carousel => {
-    let startX = 0;
-    let endX = 0;
-    carousel.addEventListener('touchstart', e => {
-        startX = e.touches[0].clientX;
-    });
-    carousel.addEventListener('touchend', e => {
-        endX = e.changedTouches[0].clientX;
-        const images = carousel.querySelectorAll('img');
-        let idx = 0;
-        images.forEach((img, i) => {
-            if (img.classList.contains('active')) idx = i;
+    // Swipe para carrusel principal
+    const carouselInner = document.querySelector('.carousel-inner');
+    if (carouselInner) {
+        let startX = 0;
+        let endX = 0;
+        carouselInner.addEventListener('touchstart', e => {
+            startX = e.touches[0].clientX;
         });
-        if (startX - endX > 40) {
-            idx = (idx + 1) % images.length;
-        }
-        if (endX - startX > 40) {
-            idx = (idx - 1 + images.length) % images.length;
-        }
-        images.forEach((img, i) => img.classList.toggle('active', i === idx));
+        carouselInner.addEventListener('touchend', e => {
+            endX = e.changedTouches[0].clientX;
+            if (startX - endX > 40) nextImage();
+            if (endX - startX > 40) prevImage();
+        });
+    }
+
+    // Swipe para carrusel en cada modal
+    document.querySelectorAll('.modal-carousel').forEach(carousel => {
+        let startX = 0;
+        let endX = 0;
+        carousel.addEventListener('touchstart', e => {
+            startX = e.touches[0].clientX;
+        });
+        carousel.addEventListener('touchend', e => {
+            endX = e.changedTouches[0].clientX;
+            const images = carousel.querySelectorAll('img');
+            let idx = 0;
+            images.forEach((img, i) => {
+                if (img.classList.contains('active')) idx = i;
+            });
+            if (startX - endX > 40) {
+                idx = (idx + 1) % images.length;
+            }
+            if (endX - startX > 40) {
+                idx = (idx - 1 + images.length) % images.length;
+            }
+            images.forEach((img, i) => img.classList.toggle('active', i === idx));
+        });
     });
 });
 

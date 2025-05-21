@@ -1,0 +1,44 @@
+# robots.txt optimizado para SEO 2025 - Restituo.org
+
+User-agent: *
+Disallow: /admin/
+Disallow: /panel/
+Disallow: /api/
+Disallow: /login/
+Disallow: /register/
+Disallow: /private/
+Allow: /public/
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /
+
+# Bloqueo de parámetros de sesión y tracking comunes
+Disallow: /*?*sessionid=
+Disallow: /*?*utm_source=
+Disallow: /*?*utm_medium=
+Disallow: /*?*utm_campaign=
+Disallow: /*?*gclid=
+Disallow: /*?*fbclid=
+
+# Permitir recursos esenciales para renderizado y SEO moderno
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.woff$
+Allow: /*.woff2$
+
+# Crawl-delay para bots menos importantes (no Google/Bing)
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+# Sitemap y host
+Sitemap: https://restituo.org/sitemap.xml
+Host: https://restituo.org
