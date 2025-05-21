@@ -95,13 +95,6 @@
             <div class="modal-content">
                 <span class="close" tabindex="0" aria-label="Cerrar">&times;</span>
                 <h3 id="modal-hotal-title">El Hostal</h3>
-                <div class="modal-carousel" aria-label="Imágenes de El Hostal">
-                    <img src="/images/hostal.png" class="active" alt="Vista principal de El Hostal" loading="lazy">
-                    <img src="/images/carrusel1.png" alt="Habitación de El Hostal" loading="lazy">
-                    <img src="/images/carrusel2.jpg" alt="Comedor de El Hostal" loading="lazy">
-                    <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
-                    <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
-                </div>
                 <p>El Hostal ofrece un entorno exclusivo con habitaciones privadas, atención médica constante y servicios de terapia individualizada. Ideal para quienes buscan privacidad, tranquilidad y una rehabilitación premium.</p>
                 <p><strong>Ubicación:</strong> Eva Perón 2825, Concordia, Argentina</p>
                 <iframe src="https://www.google.com/maps?q=Eva+Peron+2825,+Concordia,+Argentina&output=embed" title="Mapa El Hostal" width="100%" height="120" style="border:0;" allowfullscreen loading="lazy"></iframe>
@@ -114,13 +107,6 @@
             <div class="modal-content">
                 <span class="close" tabindex="0" aria-label="Cerrar">&times;</span>
                 <h3 id="modal-estancia-title">La Estancia</h3>
-                <div class="modal-carousel" aria-label="Imágenes de La Estancia">
-                    <img src="/images/estancia.jpg" class="active" alt="Vista principal de La Estancia" loading="lazy">
-                    <img src="/images/carrusel3.jpg" alt="Habitación de La Estancia" loading="lazy">
-                    <img src="/images/carrusel2.jpg" alt="Comedor de La Estancia" loading="lazy">
-                    <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
-                    <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
-                </div>
                 <p>La Estancia es una casa cómoda, con espacios compartidos y actividades grupales que refuerzan la convivencia, ideales para quienes prefieren el acompañamiento colectivo en su proceso de recuperación.</p>
                 <p><strong>Ubicación:</strong> Villa Zorraquín, Concordia, Argentina</p>
                 <iframe src="https://www.google.com/maps?q=Villa+Zorraquin,+Concordia,+Argentina&output=embed" title="Mapa La Estancia" width="100%" height="120" style="border:0;" allowfullscreen loading="lazy"></iframe>
@@ -133,13 +119,6 @@
             <div class="modal-content">
                 <span class="close" tabindex="0" aria-label="Cerrar">&times;</span>
                 <h3 id="modal-chalet-title">El Chalet</h3>
-                <div class="modal-carousel" aria-label="Imágenes de El Chalet">
-                    <img src="/images/chalet.jpg" class="active" alt="Vista principal de El Chalet" loading="lazy">
-                    <img src="/images/carrusel1.png" alt="Habitación de El Chalet" loading="lazy">
-                    <img src="/images/carrusel3.jpg" alt="Comedor de El Chalet" loading="lazy">
-                    <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
-                    <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
-                </div>
                 <p>El Chalet es una residencia exclusiva para mujeres, con atención especializada y espacios seguros para sus hijos. Combina el tratamiento con un entorno familiar y contención emocional.</p>
                 <p><strong>Ubicación:</strong> Pres. Illia y Lescano, Concordia, Argentina</p>
                 <iframe src="https://www.google.com/maps?q=Pres.+Illia+y+Lescano,+Concordia,+Argentina&output=embed" title="Mapa El Chalet" width="100%" height="120" style="border:0;" allowfullscreen loading="lazy"></iframe>
@@ -196,10 +175,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Carrusel de galería principal
     let currentIndex = 0;
     const images = document.querySelectorAll('.carousel-inner img');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+
     function showImage(index) {
         images.forEach((img, i) => {
-            img.classList.remove('active');
-            if (i === index) img.classList.add('active');
+            img.classList.toggle('active', i === index);
         });
     }
     function nextImage() {
@@ -212,13 +193,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     showImage(currentIndex);
 
-    // Botones del carrusel principal
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-    const nextBtn = document.querySelector('.carousel-btn.next');
-    if (prevBtn && nextBtn) {
-        prevBtn.onclick = e => { e.stopPropagation(); prevImage(); };
-        nextBtn.onclick = e => { e.stopPropagation(); nextImage(); };
-    }
+    if (prevBtn) prevBtn.addEventListener('click', e => { e.stopPropagation(); prevImage(); });
+    if (nextBtn) nextBtn.addEventListener('click', e => { e.stopPropagation(); nextImage(); });
 
     // Abrir modal al hacer click en el botón de cada casa
     document.querySelectorAll('.abrir-modal').forEach(btn => {
