@@ -378,6 +378,18 @@ footer p {
         margin: 0 auto;
     }
 }
+@media (max-width: 900px) {
+    .casas {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 30px !important;
+    }
+    .casa {
+        max-width: 95vw !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+}
 .img-fullscreen-overlay {
     display: none;
     position: fixed;
